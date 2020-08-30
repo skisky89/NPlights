@@ -4,7 +4,7 @@ import time
 import random
 
 from neopixel import *
-LedBright = open("/var/www/gpio/brightness.txt")
+LedBright = open("brightness.txt")
 LED = LedBright.read()
 LedBright.close()
 LED = int(LED)

@@ -2,9 +2,10 @@
 #Lightsweeps and 'playing' withn functions
 import time
 import random
+import sys
 
 from neopixel import *
-LedBright = open("/var/www/gpio/brightness.txt")
+LedBright = open("/home/pi/lights_ws/brightness.txt")
 LED = LedBright.read()
 LedBright.close()
 LED = int(LED)
@@ -31,3 +32,4 @@ if __name__ == '__main__':
 	# Intialize the library (must be called once before other functions).
             strip.begin()
 colorWipe(strip, Color(0,250,250))
+sys.exit()

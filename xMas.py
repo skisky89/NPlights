@@ -4,10 +4,10 @@ import time
 import random
 
 from neopixel import *
-LedBright = open("/var/www/gpio/brightness.txt")
-LED = LedBright.read()
-LedBright.close()
-LED = int(LED)
+#LedBright = open("/var/www/gpio/brightness.txt")
+#LED = LedBright.read()
+#LedBright.close()
+#LED = int(LED)
 random.seed()
 
 
@@ -16,7 +16,7 @@ LED_COUNT      = 150      # Number of LED pixels.
 LED_PIN        = 18     # GPIO pin connected to the pixels (must support PWM!).
 LED_FREQ_HZ    = 800000  # LED signal frequency in hertz (usually 800khz)
 LED_DMA        = 5       # DMA channel to use for generating signal (try 5)
-LED_BRIGHTNESS = LED     # Set to 0 for darkest and 255 for brightest
+LED_BRIGHTNESS = 80   # Set to 0 for darkest and 255 for brightest
 LED_INVERT     = False   # True to invert the signal (when using NPN transistor level shift)
 
 #Predefined Colors and Masks
@@ -48,6 +48,6 @@ if __name__ == '__main__':
 	print ('Press Ctrl-C to quit.')
 	while True:
                 for i in range(strip.numPixels()):
-		strip.setPixelColor(i, COLORS)
-		strip.show()
-		time.sleep(wait_ms/500.0)
+                        strip.setPixelColor(i, COLORS)
+                        strip.show()
+                        time.sleep(wait_ms/500.0)
